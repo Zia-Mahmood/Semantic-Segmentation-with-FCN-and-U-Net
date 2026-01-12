@@ -1,0 +1,49 @@
+# Explanation of FCN Variants
+
+## Differences between FCN-32s, FCN-16s, and FCN-8s
+
+1. FCN-32s:
+   - Uses only the final feature map from VGG (pool5)
+   - Directly upsamples the prediction by 32x to match the input size
+   - Simplest architecture but results in coarse predictions due to large stride
+
+2. FCN-16s:
+   - Combines predictions from pool4 (16x downsampled) and pool5 (32x downsampled)
+   - First upsamples pool5 predictions by 2x, then adds pool4 predictions
+   - Finally upsamples the combined result by 16x
+   - Produces finer predictions than FCN-32s by incorporating intermediate features
+
+3. FCN-8s:
+   - Combines predictions from pool3 (8x downsampled), pool4 (16x downsampled), and pool5 (32x downsampled)
+   - First upsamples pool5 predictions by 2x, then adds pool4 predictions
+   - Then upsamples the result by 2x again and adds pool3 predictions
+   - Finally upsamples the combined result by 8x
+   - Produces the finest predictions among the three variants by incorporating more intermediate features
+
+## Performance Comparison
+
+### FCN Variants with Frozen Backbone
+
+FCN-32s (Frozen): Test mIoU = 0.4875
+FCN-16s (Frozen): Test mIoU = 0.5018
+FCN-8s (Frozen): Test mIoU = 0.5112
+
+### FCN Variants with Fine-tuned Backbone
+
+FCN-32s (Fine-tuned): Test mIoU = 0.5581
+FCN-16s (Fine-tuned): Test mIoU = 0.6487
+FCN-8s (Fine-tuned): Test mIoU = 0.6530
+
+## Effect of Fine-tuning the Backbone
+
+1. FCN-32s: Fine-tuning improves performance by 0.0706 mIoU (14.48%)
+2. FCN-16s: Fine-tuning improves performance by 0.1469 mIoU (29.27%)
+3. FCN-8s: Fine-tuning improves performance by 0.1418 mIoU (27.74%)
+
+### Analysis
+
+1. Skip Connections Impact: FCN-8s consistently outperforms FCN-16s and FCN-32s, demonstrating the benefit of incorporating features from earlier layers for preserving spatial details.
+
+2. Fine-tuning Impact: Fine-tuning the backbone generally improves performance across all variants, as the backbone can adapt to the specific dataset rather than using generic ImageNet features.
+
+3. Qualitative Analysis: Visually, FCN-8s typically produces segmentation masks with sharper boundaries and better preservation of fine details compared to the other variants.

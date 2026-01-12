@@ -1,0 +1,31 @@
+Total number of pixels analyzed: 100,352,000
+
+Class distribution by pixel count:
+Class 0 (Unlabeled): 31,217,223 pixels (31.11%)
+Class 7 (Road): 19,477,811 pixels (19.41%)
+Class 10 (Car): 16,750,508 pixels (16.69%)
+Class 9 (Vegetation): 12,427,411 pixels (12.38%)
+Class 1 (Building): 8,478,396 pixels (8.45%)
+Class 8 (Sidewalk): 7,917,047 pixels (7.89%)
+Class 3 (Other): 1,036,427 pixels (1.03%)
+Class 2 (Fence): 1,014,960 pixels (1.01%)
+Class 6 (Roadline): 753,112 pixels (0.75%)
+Class 11 (Wall): 702,644 pixels (0.70%)
+Class 5 (Pole): 491,313 pixels (0.49%)
+Class 12 (Traffic sign): 78,358 pixels (0.08%)
+Class 4 (Pedestrian): 6,790 pixels (0.01%)
+
+Number of images containing each class:
+Class 0 (Unlabeled): 2000 images (100.00%)
+Class 7 (Road): 2000 images (100.00%)
+Class 8 (Sidewalk): 2000 images (100.00%)
+Class 9 (Vegetation): 2000 images (100.00%)
+Class 10 (Car): 2000 images (100.00%)
+Class 5 (Pole): 1969 images (98.45%)
+Class 6 (Roadline): 1959 images (97.95%)
+Class 2 (Fence): 1898 images (94.90%)
+Class 3 (Other): 1823 images (91.15%)
+Class 1 (Building): 1811 images (90.55%)
+Class 12 (Traffic sign): 1577 images (78.85%)
+Class 11 (Wall): 1517 images (75.85%)
+Class 4 (Pedestrian): 266 images (13.30%)
